@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Personalized Care Journey — Partner Overview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:       #1A7C6E;
+    --teal-mid:   #2A9D8B;
+    --teal-light: #E0F2EE;
+    --teal-pale:  #F0FAF8;
+    --gold:       #C8862A;
+    --gold-light: #FDF3E3;
+    --purple:     #5B4FA8;
+    --purple-lt:  #EEECF8;
+    --warm:       #FAF8F5;
+    --paper:      #F5F2EE;
+    --dark:       #1E1E1E;
+    --mid:        #555555;
+    --soft:       #888888;
+    --border:     #E2DDD7;
+    --white:      #FFFFFF;
+    --shadow:     rgba(0,0,0,0.07);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--warm);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ───────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #0F5447 0%, #1A7C6E 45%, #2A9D8B 100%);
+    padding: 72px 80px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 680px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .hero-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .hero-chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── SECTION WRAPPERS ───────────────────────────────────── */
+  .section {
+    padding: 72px 80px;
+  }
+  .section--alt { background: var(--paper); }
+  .section--dark {
+    background: #1E2D2A;
+    color: var(--white);
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .section--dark .section-label { color: var(--teal-mid); }
+
+  .section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: var(--dark);
+  }
+  .section--dark .section-title { color: var(--white); }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--mid);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+  .section--dark .section-sub { color: rgba(255,255,255,0.55); }
+
+  /* ── MAIN JOURNEY FLOW ──────────────────────────────────── */
+  .journey-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+    margin-top: 16px;
+  }
+
+  .flow-stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .flow-connector {
+    display: flex;
+    align-items: center;
+    padding-top: 56px;
+    color: var(--border);
+    flex-shrink: 0;
+    width: 36px;
+  }
+  .flow-connector svg {
+    width: 36px;
+    height: 24px;
+    overflow: visible;
+  }
+
+  .stage-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 2px 12px var(--shadow);
+    border: 1px solid var(--border);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .stage-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  }
+  .stage-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .stage-card.s1::before { background: linear-gradient(90deg, #1A7C6E, #2A9D8B); }
+  .stage-card.s2::before { background: linear-gradient(90deg, #2A9D8B, #5B8FA8); }
+  .stage-card.s3::before { background: linear-gradient(90deg, #5B8FA8, #5B4FA8); }
+  .stage-card.s4::before { background: linear-gradient(90deg, #5B4FA8, #C8862A); }
+  .stage-card.s5::before { background: linear-gradient(90deg, #C8862A, #1A7C6E); }
+
+  .stage-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-bottom: 12px;
+  }
+  .stage-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .stage-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .stage-tagline {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .stage-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;
+  }
+  .stage-points li {
+    font-size: 12.5px;
+    color: var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.45;
+  }
+  .stage-points li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal-mid);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ── RESEARCH LOOP ──────────────────────────────────────── */
+  .loop-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr 80px 1fr;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 48px;
+  }
+  .loop-node {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 24px 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 10px var(--shadow);
+    text-align: center;
+  }
+  .loop-node-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .loop-node-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .loop-node-desc {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .loop-node--highlight {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .loop-node--highlight .loop-node-title { color: var(--white); }
+  .loop-node--highlight .loop-node-desc { color: rgba(255,255,255,0.72); }
+
+  .loop-arrow {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .loop-arrow-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal-mid), var(--teal));
+    position: relative;
+  }
+  .loop-arrow-line::after {
+    content: '▶';
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    color: var(--teal);
+    font-size: 10px;
+  }
+  .loop-arrow-label {
+    font-size: 10px;
+    color: var(--soft);
+    font-style: italic;
+    letter-spacing: 0.2px;
+  }
+
+  /* Sub-loop showing the virtuous cycle */
+  .virtuous-cycle {
+    background: var(--teal-pale);
+    border: 1px solid var(--teal-light);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .cycle-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+  }
+  .cycle-step::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--teal-mid);
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .cycle-step:last-child::after { display: none; }
+  .cycle-step-num {
+    width: 28px; height: 28px;
+    background: var(--teal);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .cycle-step-text {
+    font-size: 12.5px;
+    color: var(--teal);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .cycle-step-sub {
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  /* ── CARE MANAGER ADVANTAGE ─────────────────────────────── */
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .advantage-col {
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+  }
+  .advantage-col--before {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .advantage-col--after {
+    background: var(--teal);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .adv-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .advantage-col--before .adv-label { color: rgba(255,255,255,0.4); }
+  .advantage-col--after  .adv-label { color: rgba(255,255,255,0.8); }
+  .adv-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: currentColor;
+    display: inline-block;
+  }
+  .adv-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .advantage-col--before .adv-title { color: rgba(255,255,255,0.45); }
+  .advantage-col--after  .adv-title { color: white; }
+  .adv-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .adv-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .adv-item-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .advantage-col--before .adv-item-icon {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.3);
+  }
+  .advantage-col--before .adv-item { color: rgba(255,255,255,0.35); }
+  .advantage-col--after .adv-item-icon {
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+  .advantage-col--after .adv-item { color: rgba(255,255,255,0.88); }
+
+  .bridge-callout {
+    margin-top: 24px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    border-left: 3px solid var(--teal-mid);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+  .advantage-col--after .bridge-callout {
+    background: rgba(255,255,255,0.12);
+    border-left-color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.82);
+  }
+
+  /* ── LIFE STAGES ────────────────────────────────────────── */
+  .stages-timeline {
+    position: relative;
+    margin-top: 16px;
+  }
+  .stages-track {
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+    margin-bottom: 32px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .track-segment {
+    flex: 1;
+    height: 8px;
+  }
+  .track-segment:nth-child(1) { background: var(--teal-mid); }
+  .track-segment:nth-child(2) { background: #5B8FA8; }
+  .track-segment:nth-child(3) { background: var(--purple); }
+  .track-segment:nth-child(4) { background: var(--gold); }
+
+  .life-stages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .life-stage-card {
+    border-radius: 14px;
+    padding: 24px 20px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .life-stage-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .life-stage-card:nth-child(1)::before { background: var(--teal-mid); }
+  .life-stage-card:nth-child(2)::before { background: #5B8FA8; }
+  .life-stage-card:nth-child(3)::before { background: var(--purple); }
+  .life-stage-card:nth-child(4)::before { background: var(--gold); }
+
+  .ls-icon   { font-size: 26px; margin-bottom: 10px; display: block; }
+  .ls-phase  { font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--soft); margin-bottom: 6px; }
+  .ls-title  { font-weight: 700; font-size: 15px; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+  .ls-desc   { font-size: 12.5px; color: var(--mid); line-height: 1.55; margin-bottom: 14px; }
+  .ls-tags   { display: flex; flex-wrap: wrap; gap: 5px; }
+  .ls-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--mid);
+    background: var(--warm);
+  }
+  .life-stage-card:nth-child(1) .ls-tag { background: var(--teal-pale); border-color: var(--teal-light); color: var(--teal); }
+  .life-stage-card:nth-child(2) .ls-tag { background: #EEF5F9; border-color: #C0D9E8; color: #2E6B8C; }
+  .life-stage-card:nth-child(3) .ls-tag { background: var(--purple-lt); border-color: #C5B8E8; color: var(--purple); }
+  .life-stage-card:nth-child(4) .ls-tag { background: var(--gold-light); border-color: #EDD4A0; color: var(--gold); }
+
+  /* ── FOOTER ─────────────────────────────────────────────── */
+  .doc-footer {
+    background: #111E1C;
+    padding: 32px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .footer-meta {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── PRINT STYLES ───────────────────────────────────────── */
+  @media print {
+    .section { padding: 40px 48px; }
+    .hero { padding: 48px 48px 40px; }
+    .hero-title { font-size: 38px; }
+    .stage-card:hover { transform: none; box-shadow: 0 2px 8px var(--shadow); }
+    body { font-size: 13px; }
+    .section, .hero { break-inside: avoid; }
+  }
+
+  /* ── UTIL ───────────────────────────────────────────────── */
+  .text-teal   { color: var(--teal); }
+  .text-gold   { color: var(--gold); }
+  .text-purple { color: var(--purple); }
+  .mt-0 { margin-top: 0 !important; }
+  .mb-0 { margin-bottom: 0 !important; }
+
+  /* Animate on load */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .stage-card, .loop-node, .life-stage-card, .advantage-col {
+    animation: fadeUp 0.45s ease both;
+  }
+  .stage-card:nth-child(1)  { animation-delay: 0.05s; }
+  .stage-card:nth-child(2)  { animation-delay: 0.12s; }
+  .stage-card:nth-child(3)  { animation-delay: 0.19s; }
+  .stage-card:nth-child(4)  { animation-delay: 0.26s; }
+  .stage-card:nth-child(5)  { animation-delay: 0.33s; }
+  .life-stage-card:nth-child(1) { animation-delay: 0.05s; }
+  .life-stage-card:nth-child(2) { animation-delay: 0.12s; }
+  .life-stage-card:nth-child(3) { animation-delay: 0.19s; }
+  .life-stage-card:nth-child(4) { animation-delay: 0.26s; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-eyebrow">Partner Overview · April 2026</div>
+  <h1 class="hero-title">The Personalized<br><em>Care Journey</em></h1>
+  <p class="hero-sub">We don't wait for members to ask for help. We build understanding before they ever reach out — so every interaction, from their first session to their care manager's first call, already feels like it was made for them.</p>
+  <div class="hero-chips">
+    <span class="hero-chip">Post-Retirement Expertise</span>
+    <span class="hero-chip">Adaptive Recommendations</span>
+    <span class="hero-chip">Care-First Design</span>
+    <span class="hero-chip">Research-Backed</span>
+    <span class="hero-chip">PHI / PII Safe</span>
+  </div>
+</section>
+
+
+<!-- ── SECTION 1: THE JOURNEY FLOW ───────────────────────────────────────── -->
+<section class="section">
+  <div class="section-label">The End-to-End Flow</div>
+  <h2 class="section-title">From first contact to lifelong support</h2>
+  <p class="section-sub">Five interconnected stages — each one feeding the next. The earlier stages do the intelligence work so that by the time a member reaches their care manager, the gap is already bridged.</p>
+
+  <div class="journey-flow">
+
+    <!-- Stage 1 -->
+    <div class="flow-stage">
+      <div class="stage-card s1">
+        <div class="stage-num">Stage 01</div>
+        <div class="stage-icon">📡</div>
+        <div class="stage-title">Reach &amp; Recruit</div>
+        <div class="stage-tagline">"We find the right members at the right moment"</div>
+        <ul class="stage-points">
+          <li>In-app intercept — triggered after a meaningful action, not at random</li>
+          <li>Targeted campaign outreach coordinated with partner comms</li>
+          <li>Care manager referral for power users and edge cases</li>
+          <li>Screener criteria ensure participants reflect real member population</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-connector">
+      <svg viewBox="0 0 36 24"><path d="M0 12 H28 M22 6 L32 12 L22 18" stroke="#2A9D8B" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="flow-stage">
+      <div class="stage-card s2">
+        <div class="stage-num">Stage 02</div>
+        <div class="stage-icon">🎙️</div>
+        <div class="stage-title">Listen &amp; Learn</div>
+        <div class="stage-tagline">"Real voices shape every design decision"</div>
+        <ul class="stage-points">
+          <li>Moderated sessions via User Interviews — 8–10 per partner</li>
+          <li>Unmoderated validation at scale — 50+ participants</li>
+          <li>Partner holds a silent observer seat in every session</li>
+          <li>Fully PHI/PII safe — synthetic data, screened consent</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-connector">
+      <svg viewBox="0 0 36 24"><path d="M0 12 H28 M22 6 L32 12 L22 18" stroke="#5B8FA8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="flow-stage">
+      <div class="stage-card s3">
+        <div class="stage-num">Stage 03</div>
+        <div class="stage-icon">⚙️</div>
+        <div class="stage-title">Build Intelligence</div>
+        <div class="stage-tagline">"The system learns. The experience adapts."</div>
+        <ul class="stage-points">
+          <li>Insights drive adaptive recommendation engine — articles, services, products</li>
+          <li>Assessment answers generate a personalised action plan</li>
+          <li>Recommendations refine continuously with each member interaction</li>
+          <li>Design decisions logged from insight → shipped feature</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-connector">
+      <svg viewBox="0 0 36 24"><path d="M0 12 H28 M22 6 L32 12 L22 18" stroke="#5B4FA8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="flow-stage">
+      <div class="stage-card s4">
+        <div class="stage-num">Stage 04</div>
+        <div class="stage-icon">🤝</div>
+        <div class="stage-title">Bridge the Gap</div>
+        <div class="stage-tagline">"First contact. Already connected."</div>
+        <ul class="stage-points">
+          <li>Care manager enters with full member context already built</li>
+          <li>Personalised action plan pre-generated before first call</li>
+          <li>Recommendations already surfaced and waiting to discuss</li>
+          <li>First session is about <em>deepening</em> — not starting from zero</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-connector">
+      <svg viewBox="0 0 36 24"><path d="M0 12 H28 M22 6 L32 12 L22 18" stroke="#C8862A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Stage 5 -->
+    <div class="flow-stage">
+      <div class="stage-card s5">
+        <div class="stage-num">Stage 05</div>
+        <div class="stage-icon">🌿</div>
+        <div class="stage-title">The Independence Journey</div>
+        <div class="stage-tagline">"We walk alongside every stage of life"</div>
+        <ul class="stage-points">
+          <li>Ongoing support evolves as member's life stage changes</li>
+          <li>Day 7, 30, and 90 touchpoints keep the experience adaptive</li>
+          <li>Care manager becomes a trusted long-term guide</li>
+          <li>Outcomes loop back to improve the system for every member</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── SECTION 2: RESEARCH → INTELLIGENCE LOOP ───────────────────────────── -->
+<section class="section section--alt">
+  <div class="section-label">How We Build Understanding</div>
+  <h2 class="section-title">Research doesn't end. It compounds.</h2>
+  <p class="section-sub">User testing isn't a one-time gate before launch. It feeds a continuous loop that makes every future member's experience smarter than the last.</p>
+
+  <div class="virtuous-cycle">
+    <div class="cycle-step">
+      <div class="cycle-step-num">1</div>
+      <div class="cycle-step-text">Test with real members</div>
+      <div class="cycle-step-sub">Moderated + unmoderated sessions</div>
+    </div>
+    <div class="cycle-step">
+      <div class="cycle-step-num">2</div>
+      <div class="cycle-step-text">Synthesise insights</div>
+      <div class="cycle-step-sub">Affinity mapping → insight statements</div>
+    </div>
+    <div class="cycle-step">
+      <div class="cycle-step-num">3</div>
+      <div class="cycle-step-text">Adapt the system</div>
+      <div class="cycle-step-sub">Recommendations engine updated</div>
+    </div>
+    <div class="cycle-step">
+      <div class="cycle-step-num">4</div>
+      <div class="cycle-step-text">Equip the care manager</div>
+      <div class="cycle-step-sub">Richer context at every touchpoint</div>
+    </div>
+    <div class="cycle-step">
+      <div class="cycle-step-num">5</div>
+      <div class="cycle-step-text">Member feels understood</div>
+      <div class="cycle-step-sub">Better outcomes → more signal</div>
+    </div>
+  </div>
+
+  <p style="font-size:12.5px; color: var(--mid); font-style: italic; margin-top: 14px; text-align: center;">
+    Each cycle closes the gap further between what a member needs and what the care manager already knows.
+  </p>
+</section>
+
+
+<!-- ── SECTION 3: CARE MANAGER ADVANTAGE ─────────────────────────────────── -->
+<section class="section section--dark">
+  <div class="section-label">The Care Manager Advantage</div>
+  <h2 class="section-title">Changing what "first contact" means</h2>
+  <p class="section-sub">Most care models start cold. Ours starts warm — because the work has already been done before the care manager ever picks up the phone.</p>
+
+  <div class="advantage-grid">
+
+    <!-- Before -->
+    <div class="advantage-col advantage-col--before">
+      <div class="adv-label"><span class="adv-dot"></span> Without this approach</div>
+      <div class="adv-title">The care manager starts from zero</div>
+      <div class="adv-items">
+        <div class="adv-item">
+          <div class="adv-item-icon">✕</div>
+          <span>First session spent gathering basic information the member has already provided elsewhere</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✕</div>
+          <span>No insight into what the member actually cares about or struggles with</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✕</div>
+          <span>Generic opening recommendations that may not feel relevant</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✕</div>
+          <span>Trust must be built entirely through conversation — takes multiple sessions</span>
+        </div>
+      </div>
+      <div class="bridge-callout">The member has to re-introduce themselves. The care manager has to prove their value. Time and trust are both lost.</div>
+    </div>
+
+    <!-- After -->
+    <div class="advantage-col advantage-col--after">
+      <div class="adv-label"><span class="adv-dot"></span> With our approach</div>
+      <div class="adv-title">The care manager arrives already equipped</div>
+      <div class="adv-items">
+        <div class="adv-item">
+          <div class="adv-item-icon">✓</div>
+          <span>Member's completed assessment and action plan are waiting before the first call</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✓</div>
+          <span>Adaptive recommendations already surfaced — care manager can endorse, adjust, deepen</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✓</div>
+          <span>System has already identified priorities — care manager focuses on relationship, not intake</span>
+        </div>
+        <div class="adv-item">
+          <div class="adv-item-icon">✓</div>
+          <span>Member feels recognised immediately — trust accelerates from minute one</span>
+        </div>
+      </div>
+      <div class="bridge-callout">"The first call isn't the beginning of the relationship. It's already several steps in."</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── SECTION 4: POST-RETIREMENT LIFE STAGES ────────────────────────────── -->
+<section class="section">
+  <div class="section-label">Post-Retirement Life Stages</div>
+  <h2 class="section-title">We meet members wherever they are</h2>
+  <p class="section-sub">Post-retirement is not a single moment — it's a long arc of changing needs, priorities, and challenges. We design for the full journey, not just the entry point.</p>
+
+  <div class="life-stages-grid">
+
+    <div class="life-stage-card">
+      <span class="ls-icon">🌅</span>
+      <div class="ls-phase">Stage I</div>
+      <div class="ls-title">Active Independence</div>
+      <div class="ls-desc">Early retirement. Members are active, curious, and navigating a new identity beyond work. They want to plan well, stay healthy, and stay connected.</div>
+      <div class="ls-tags">
+        <span class="ls-tag">Wellness planning</span>
+        <span class="ls-tag">Financial confidence</span>
+        <span class="ls-tag">Purpose & activity</span>
+        <span class="ls-tag">Social connection</span>
+      </div>
+    </div>
+
+    <div class="life-stage-card">
+      <span class="ls-icon">🧭</span>
+      <div class="ls-phase">Stage II</div>
+      <div class="ls-title">Navigating Transitions</div>
+      <div class="ls-desc">Mid-retirement. Life brings change — health shifts, family roles evolve, routines adjust. Members need a trusted guide more than information.</div>
+      <div class="ls-tags">
+        <span class="ls-tag">Health management</span>
+        <span class="ls-tag">Caregiver support</span>
+        <span class="ls-tag">Life adjustments</span>
+        <span class="ls-tag">Medication guidance</span>
+      </div>
+    </div>
+
+    <div class="life-stage-card">
+      <span class="ls-icon">🏡</span>
+      <div class="ls-phase">Stage III</div>
+      <div class="ls-title">Supported Living</div>
+      <div class="ls-desc">Later retirement. Independence remains central but support becomes essential. Members and families need coordinated, compassionate guidance.</div>
+      <div class="ls-tags">
+        <span class="ls-tag">Care coordination</span>
+        <span class="ls-tag">Family communication</span>
+        <span class="ls-tag">Home &amp; safety</span>
+        <span class="ls-tag">Dignity-first care</span>
+      </div>
+    </div>
+
+    <div class="life-stage-card">
+      <span class="ls-icon">💛</span>
+      <div class="ls-phase">Stage IV</div>
+      <div class="ls-title">Legacy &amp; Continuity</div>
+      <div class="ls-desc">A stage often overlooked. Members focus on what they leave behind — relationships, values, and wishes. Our care manager is there for this too.</div>
+      <div class="ls-tags">
+        <span class="ls-tag">End-of-life planning</span>
+        <span class="ls-tag">Family wishes</span>
+        <span class="ls-tag">Memory &amp; legacy</span>
+        <span class="ls-tag">Ongoing support</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="doc-footer">
+  <div class="footer-brand">The Personalized Care Journey</div>
+  <div class="footer-meta">Confidential · Partner Overview · April 2026 · Director of Design</div>
+</footer>
+
+</body>
+</html>
