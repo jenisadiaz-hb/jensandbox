@@ -335,12 +335,6 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--off-black);fo
         <div class="sicon" role="img" aria-label="Broadcast">📡</div>
         <h3 class="stitle">Reach &amp; Recruit</h3>
         <p class="stag">"We find the right members at the right moment"</p>
-        <ul class="spts">
-          <li>In-app intercept triggered after a meaningful action — not at random</li>
-          <li>Targeted campaign outreach coordinated with partner comms</li>
-          <li>Care manager referral for power users and edge cases</li>
-          <li>Screeners ensure participants reflect the real member population</li>
-        </ul>
       </article>
     </div>
     <div class="arrow" aria-hidden="true"><svg width="26" height="14" viewBox="0 0 26 14" focusable="false"><path d="M0 7H18M12 1L22 7L12 13" stroke="#C8A800" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -350,12 +344,6 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--off-black);fo
         <div class="sicon" role="img" aria-label="Microphone">🎙️</div>
         <h3 class="stitle">Listen &amp; Learn</h3>
         <p class="stag">"Real voices shape every design decision"</p>
-        <ul class="spts">
-          <li>Moderated sessions via User Interviews — 8–10 per partner</li>
-          <li>Unmoderated validation at scale — 50+ participants</li>
-          <li>Partner holds a silent observer seat in every session</li>
-          <li>Fully PHI/PII safe — synthetic data, screened consent</li>
-        </ul>
       </article>
     </div>
     <div class="arrow" aria-hidden="true"><svg width="26" height="14" viewBox="0 0 26 14" focusable="false"><path d="M0 7H18M12 1L22 7L12 13" stroke="#2A8A84" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -365,12 +353,6 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--off-black);fo
         <div class="sicon" role="img" aria-label="Settings">⚙️</div>
         <h3 class="stitle">Build Intelligence</h3>
         <p class="stag">"The system learns. The experience adapts."</p>
-        <ul class="spts">
-          <li>Insights drive adaptive recommendations — articles, services, products</li>
-          <li>Assessment answers generate a personalised action plan</li>
-          <li>Recommendations refine with every member interaction</li>
-          <li>Design decisions logged: insight → shipped feature</li>
-        </ul>
       </article>
     </div>
     <div class="arrow" aria-hidden="true"><svg width="26" height="14" viewBox="0 0 26 14" focusable="false"><path d="M0 7H18M12 1L22 7L12 13" stroke="#EF7512" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -380,12 +362,6 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--off-black);fo
         <div class="sicon" role="img" aria-label="Handshake">🤝</div>
         <h3 class="stitle">Bridge the Gap</h3>
         <p class="stag">"First contact. Already connected."</p>
-        <ul class="spts">
-          <li>Care manager enters with full member context already built</li>
-          <li>Personalised action plan pre-generated before first call</li>
-          <li>Recommendations surfaced and ready to discuss</li>
-          <li>First session deepens — it doesn't start from zero</li>
-        </ul>
       </article>
     </div>
     <div class="arrow" aria-hidden="true"><svg width="26" height="14" viewBox="0 0 26 14" focusable="false"><path d="M0 7H18M12 1L22 7L12 13" stroke="#CC4983" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -395,29 +371,357 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--off-black);fo
         <div class="sicon" role="img" aria-label="Plant">🌿</div>
         <h3 class="stitle">The Independence Journey</h3>
         <p class="stag">"We walk alongside every stage of life"</p>
-        <ul class="spts">
-          <li>Ongoing support evolves as the member's life stage changes</li>
-          <li>Day 7, 30, and 90 check-ins keep the experience adaptive</li>
-          <li>Care manager becomes a trusted long-term guide</li>
-          <li>Outcomes loop back to improve the system for every member</li>
-        </ul>
       </article>
     </div>
   </div>
 </section>
 
-<section class="sec sec--mist" aria-labelledby="h-loop">
-  <p class="eyebrow" aria-hidden="true">How We Build Understanding</p>
-  <h2 class="sec-title" id="h-loop">Research doesn't end.<br>It compounds.</h2>
-  <p class="sec-sub">User testing isn't a one-time gate before launch. It feeds a continuous loop that makes every future member's experience smarter than the last — so the care manager always arrives better equipped than before.</p>
-  <div class="cycle" role="list" aria-label="Five-step research loop">
-    <div class="citem" role="listitem"><div class="cnum" aria-hidden="true">1</div><p class="clabel">Test with real members</p><p class="csub">Moderated + unmoderated sessions via User Interviews</p></div>
-    <div class="citem" role="listitem"><div class="cnum" aria-hidden="true">2</div><p class="clabel">Synthesise insights</p><p class="csub">Affinity mapping → clear insight statements</p></div>
-    <div class="citem" role="listitem"><div class="cnum" aria-hidden="true">3</div><p class="clabel">Adapt the system</p><p class="csub">Recommendations engine and action plan refined</p></div>
-    <div class="citem" role="listitem"><div class="cnum" aria-hidden="true">4</div><p class="clabel">Equip the care manager</p><p class="csub">Richer context ready at every member touchpoint</p></div>
-    <div class="citem" role="listitem"><div class="cnum" aria-hidden="true">5</div><p class="clabel">Member feels understood</p><p class="csub">Better outcomes generate more signal → repeat</p></div>
+<!-- ═══════════════════════════════════════════
+     USER TESTING STRATEGY SECTION
+════════════════════════════════════════════ -->
+<style>
+/* ── Recruitment cards ── */
+.recruit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:2rem}
+.recruit-card{background:#fff;border-radius:14px;padding:1.4rem 1.5rem;border-top:4px solid var(--yellow)}
+.recruit-card h3{font-family:var(--font-b);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin:0 0 0.75rem;opacity:0.6}
+.recruit-card p,.recruit-card ul{font-size:0.88rem;color:#3a3a3a;margin:0;line-height:1.6}
+.recruit-card ul{padding-left:1.1rem}
+.recruit-card li{margin-bottom:0.25rem}
+
+/* ── Flow diagram ── */
+.flow-diagram{margin-top:2.5rem;overflow-x:auto;padding-bottom:1rem}
+.flow-stages{display:flex;align-items:flex-start;gap:0;min-width:600px}
+.flow-stage{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+.flow-stage:not(:last-child)::after{content:'';position:absolute;top:28px;right:-1px;width:calc(50% + 1px);height:2px;background:linear-gradient(to right,var(--yellow),var(--yellow));z-index:0}
+.flow-stage:not(:first-child)::before{content:'';position:absolute;top:28px;left:-1px;width:calc(50% + 1px);height:2px;background:var(--yellow);z-index:0}
+.flow-node{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-family:var(--font-b);font-size:1.1rem;font-weight:700;color:var(--forest);flex-shrink:0;box-shadow:0 2px 10px rgba(0,51,34,.15)}
+.flow-label{font-family:var(--font-b);font-size:0.78rem;font-weight:700;color:var(--forest);text-align:center;margin-top:0.65rem;line-height:1.35;padding:0 4px;letter-spacing:-0.01em}
+.flow-sublabel{font-size:0.68rem;color:#666;text-align:center;margin-top:0.2rem;font-style:italic;padding:0 4px}
+
+/* ── Stage cards ── */
+.stage-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:2rem}
+.stage-card{background:#fff;border-radius:14px;padding:1.3rem;display:flex;flex-direction:column;gap:0.9rem}
+.stage-num{font-family:var(--font-b);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);background:var(--forest);display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:0.7rem;font-weight:700;flex-shrink:0}
+.stage-card-title{font-family:var(--font-b);font-size:0.85rem;font-weight:700;color:var(--forest);margin:0}
+.stage-qs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem}
+.stage-qs li{font-size:0.78rem;color:#444;line-height:1.45;padding-left:1rem;position:relative}
+.stage-qs li::before{content:'?';position:absolute;left:0;color:var(--yellow);font-weight:700;font-size:0.7rem;top:1px}
+.stage-score-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,.07)}
+.sscore{font-size:0.65rem;font-weight:700;letter-spacing:0.04em;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.sscore--s{background:#D0F0ED;color:#1a6b65}
+.sscore--u{background:#E6ECB2;color:#3a4a0a}
+.sscore--r{background:#FFF3C4;color:#7a5a00}
+.sscore--l{background:#FDE8D2;color:#8a3a00}
+.sscore--t{background:#F5D6E8;color:#7a1a45}
+.sscore--i{background:#EDE8E0;color:#4a3a2a}
+
+/* ── Scoring legend ── */
+.score-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.75rem;padding:1.1rem 1.3rem;background:rgba(0,51,34,.05);border-radius:10px}
+.score-legend-label{font-family:var(--font-b);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest);opacity:.6;width:100%;margin-bottom:0.2rem}
+</style>
+
+<section class="sec sec--cream" aria-labelledby="h-testing">
+  <p class="eyebrow" aria-hidden="true">Research Design</p>
+  <h2 class="sec-title" id="h-testing">How we test<br><span style="color:var(--forest);opacity:.55;font-size:.7em;">this partner's journey</span></h2>
+  <p class="sec-sub">A structured plan for recruiting participants, running task-based sessions, and measuring what matters — across every step from the partner's PRU assessment to a personalized THB action plan.</p>
+
+  <!-- Recruitment -->
+  <h3 class="eyebrow" style="margin-top:2rem;" aria-hidden="false">Recruitment</h3>
+  <div class="recruit-grid" role="list">
+    <article class="recruit-card" role="listitem">
+      <h3>Who we recruit</h3>
+      <ul>
+        <li>Current members (primary)</li>
+        <li>Non-members via targeted panel (reduces in-network bias)</li>
+        <li>Care manager–nominated members</li>
+      </ul>
+    </article>
+    <article class="recruit-card" role="listitem">
+      <h3>How we find them</h3>
+      <ul>
+        <li>Internal surveys</li>
+        <li>Email campaigns</li>
+        <li>Care manager referrals</li>
+        <li>Targeted audience panels (non-member track)</li>
+      </ul>
+    </article>
+    <article class="recruit-card" role="listitem">
+      <h3>Incentives</h3>
+      <ul>
+        <li><strong>Members:</strong> THB Marketplace credit or no incentive</li>
+        <li><strong>Non-members / targeted panel:</strong> Gift cards ($)</li>
+      </ul>
+    </article>
+    <article class="recruit-card" role="listitem">
+      <h3>What we're testing</h3>
+      <ul>
+        <li>Task &amp; exploration flows</li>
+        <li>User acceptance rating</li>
+        <li>Open-ended idea generation</li>
+      </ul>
+    </article>
   </div>
-  <p class="cnote">Each cycle closes the gap further between what a member needs and what the care manager already knows.</p>
+
+  <!-- Flow diagram -->
+  <h3 class="eyebrow" style="margin-top:2.5rem;" aria-hidden="false">User Flow</h3>
+  <div class="flow-diagram" role="img" aria-label="5-stage user testing flow: PRU Assessment, THB Recommendation, THB Site, Second Assessment, Action Plan">
+    <div class="flow-stages">
+      <div class="flow-stage">
+        <div class="flow-node" aria-hidden="true">1</div>
+        <div class="flow-label">PRU<br>Assessment</div>
+        <div class="flow-sublabel">Partner platform</div>
+      </div>
+      <div class="flow-stage">
+        <div class="flow-node" aria-hidden="true">2</div>
+        <div class="flow-label">THB<br>Recommendation</div>
+        <div class="flow-sublabel">Card surfaces</div>
+      </div>
+      <div class="flow-stage">
+        <div class="flow-node" aria-hidden="true">3</div>
+        <div class="flow-label">THB<br>Site</div>
+        <div class="flow-sublabel">Click-through</div>
+      </div>
+      <div class="flow-stage">
+        <div class="flow-node" aria-hidden="true">4</div>
+        <div class="flow-label">Second<br>Assessment</div>
+        <div class="flow-sublabel">THB platform</div>
+      </div>
+      <div class="flow-stage">
+        <div class="flow-node" aria-hidden="true">5</div>
+        <div class="flow-label">Action<br>Plan</div>
+        <div class="flow-sublabel">Personalized output</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage detail cards -->
+  <div class="stage-cards">
+
+    <article class="stage-card">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="stage-num" aria-hidden="true">1</div>
+        <p class="stage-card-title">PRU Assessment</p>
+      </div>
+      <ul class="stage-qs" aria-label="Research questions for stage 1">
+        <li>Is this cognitive overload?</li>
+        <li>Does it feel too long?</li>
+        <li>What do they expect from completing both assessments?</li>
+        <li>Do they suspect they should already have a THB plan by this point?</li>
+        <li>Should the first action plan task be answering a follow-up question?</li>
+      </ul>
+      <div class="stage-score-chips" aria-label="Scoring dimensions">
+        <span class="sscore sscore--u">Usability</span>
+        <span class="sscore sscore--s">Seamlessness</span>
+        <span class="sscore sscore--t">Trustability</span>
+      </div>
+    </article>
+
+    <article class="stage-card">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="stage-num" aria-hidden="true">2</div>
+        <p class="stage-card-title">THB Recommendation Card</p>
+      </div>
+      <ul class="stage-qs" aria-label="Research questions for stage 2">
+        <li>Is the card visually appealing?</li>
+        <li>Does the copy speak to them?</li>
+        <li>Would they click through to THB?</li>
+        <li>Do they feel like it's personalized to their situation?</li>
+      </ul>
+      <div class="stage-score-chips" aria-label="Scoring dimensions">
+        <span class="sscore sscore--l">Likability</span>
+        <span class="sscore sscore--r">Recommendability</span>
+        <span class="sscore sscore--s">Seamlessness</span>
+      </div>
+    </article>
+
+    <article class="stage-card">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="stage-num" aria-hidden="true">3</div>
+        <p class="stage-card-title">THB Site Exploration</p>
+      </div>
+      <ul class="stage-qs" aria-label="Research questions for stage 3">
+        <li>Would they explore the rest of the THB site?</li>
+        <li>Where would they go first?</li>
+        <li>Would they consider purchasing something?</li>
+        <li>Does THB feel trustworthy as a new platform?</li>
+      </ul>
+      <div class="stage-score-chips" aria-label="Scoring dimensions">
+        <span class="sscore sscore--u">Usability</span>
+        <span class="sscore sscore--l">Likability</span>
+        <span class="sscore sscore--t">Trustability</span>
+        <span class="sscore sscore--i">Ideas</span>
+      </div>
+    </article>
+
+    <article class="stage-card">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="stage-num" aria-hidden="true">4</div>
+        <p class="stage-card-title">Second Assessment</p>
+      </div>
+      <ul class="stage-qs" aria-label="Research questions for stage 4">
+        <li>Does this second assessment feel like too much?</li>
+        <li>Do they feel like it's building on what they already shared?</li>
+        <li>Does it feel personalized to them?</li>
+        <li>Is the length appropriate given they just finished PRU?</li>
+      </ul>
+      <div class="stage-score-chips" aria-label="Scoring dimensions">
+        <span class="sscore sscore--u">Usability</span>
+        <span class="sscore sscore--s">Seamlessness</span>
+        <span class="sscore sscore--l">Likability</span>
+      </div>
+    </article>
+
+    <article class="stage-card">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="stage-num" aria-hidden="true">5</div>
+        <p class="stage-card-title">Action Plan</p>
+      </div>
+      <ul class="stage-qs" aria-label="Research questions for stage 5">
+        <li>Would they try to complete an action item?</li>
+        <li>Do they feel like it was worth the two assessments?</li>
+        <li>Would they come back to THB independently?</li>
+        <li>Would they return to PRU after seeing the plan?</li>
+        <li>Would they recommend THB to someone they care about?</li>
+      </ul>
+      <div class="stage-score-chips" aria-label="Scoring dimensions">
+        <span class="sscore sscore--r">Recommendability</span>
+        <span class="sscore sscore--l">Likability</span>
+        <span class="sscore sscore--t">Trustability</span>
+        <span class="sscore sscore--i">Ideas</span>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Scoring legend -->
+  <div class="score-legend" role="note" aria-label="Scoring dimension key">
+    <span class="score-legend-label">Scoring dimensions</span>
+    <span class="sscore sscore--s">Seamlessness</span>
+    <span class="sscore sscore--u">Usability</span>
+    <span class="sscore sscore--r">Recommendability</span>
+    <span class="sscore sscore--l">Likability</span>
+    <span class="sscore sscore--t">Trustability</span>
+    <span class="sscore sscore--i">Ideas from Users</span>
+  </div>
+
+</section>
+
+<!-- ── Visual Storyboard ── -->
+<style>
+.storyboard{margin-top:2rem;overflow-x:auto;padding-bottom:1.5rem}
+.sb-track{display:flex;align-items:flex-start;gap:0;min-width:700px;position:relative}
+.sb-track::before{content:'';position:absolute;top:72px;left:32px;right:32px;height:2px;background:repeating-linear-gradient(to right,var(--yellow) 0,var(--yellow) 8px,transparent 8px,transparent 16px);z-index:0}
+.sb-item{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1}
+.sb-frame{width:100%;max-width:130px;aspect-ratio:9/16;background:#f0ece6;border:2px dashed #b0a898;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:border-color 0.2s,background 0.2s;text-align:center;padding:0.5rem}
+.sb-frame:hover{border-color:var(--forest);background:#e8e3da}
+.sb-frame-icon{font-size:1.6rem;opacity:0.45}
+.sb-frame-hint{font-size:0.62rem;color:#888;letter-spacing:0.04em;line-height:1.4}
+.sb-dot{width:16px;height:16px;border-radius:50%;background:var(--yellow);border:3px solid var(--forest);margin:0.6rem 0 0.4rem;flex-shrink:0}
+.sb-label{font-family:var(--font-b);font-size:0.75rem;font-weight:700;color:var(--forest);text-align:center;line-height:1.3;padding:0 4px}
+.sb-sub{font-size:0.65rem;color:#777;text-align:center;margin-top:2px;padding:0 4px;font-style:italic}
+
+/* notification triggers */
+.sb-notify{position:absolute;top:-36px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--forest);color:var(--yellow);font-size:0.6rem;font-family:var(--font-b);font-weight:700;letter-spacing:0.05em;padding:3px 9px;border-radius:100px;display:flex;align-items:center;gap:4px}
+.sb-notify--out{background:var(--yellow);color:var(--forest)}
+.sb-notify svg{width:9px;height:9px;flex-shrink:0}
+</style>
+
+<section class="sec sec--mist" aria-labelledby="h-storyboard">
+  <p class="eyebrow" aria-hidden="true">Visual Storyboard</p>
+  <h2 class="sec-title" id="h-storyboard">The member's<br>visual journey</h2>
+  <p class="sec-sub">Drop in screenshots or mockups for each touchpoint — from the partner's assessment through to the THB action plan and care manager connection.</p>
+
+  <div class="storyboard" role="region" aria-label="Visual storyboard with image placeholders">
+    <div class="sb-track">
+
+      <!-- 1: Partner placeholder / THB card -->
+      <div class="sb-item">
+        <div class="sb-frame" role="img" aria-label="Placeholder: THB recommendation card on partner platform" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">THB recommendation card<br>(partner UI)</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">THB Card</div>
+        <div class="sb-sub">Surfaces in partner app</div>
+      </div>
+
+      <!-- 2: PRU Assessment -->
+      <div class="sb-item">
+        <div class="sb-frame" role="img" aria-label="Placeholder: PRU assessment screens" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">PRU assessment<br>screens</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">PRU Assessment</div>
+        <div class="sb-sub">Partner platform</div>
+      </div>
+
+      <!-- 3: THB Assessment -->
+      <div class="sb-item">
+        <div class="sb-frame" role="img" aria-label="Placeholder: THB second assessment screens" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">THB assessment<br>screens</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">THB Assessment</div>
+        <div class="sb-sub">THB platform</div>
+      </div>
+
+      <!-- 4: Exploration -->
+      <div class="sb-item">
+        <div class="sb-frame" role="img" aria-label="Placeholder: THB site exploration screens" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">THB site<br>exploration</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">Exploration</div>
+        <div class="sb-sub">Browsing THB</div>
+      </div>
+
+      <!-- 5: Member notified → Care Manager -->
+      <div class="sb-item" style="position:relative;">
+        <div class="sb-notify" aria-label="Member is notified: a care manager will reach out">
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M5 1v4M5 8v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Member notified →
+        </div>
+        <div class="sb-frame" role="img" aria-label="Placeholder: Member notification that care manager will reach out" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">Notification:<br>"Your care manager<br>will reach out"</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">Member Notified</div>
+        <div class="sb-sub">Expect contact</div>
+      </div>
+
+      <!-- 6: Care Manager reaches out -->
+      <div class="sb-item" style="position:relative;">
+        <div class="sb-notify sb-notify--out" aria-label="Care manager reaches out to member">
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M6 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          CM reaches out
+        </div>
+        <div class="sb-frame" role="img" aria-label="Placeholder: Care manager outreach to member" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">Care manager<br>first contact</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">Care Manager</div>
+        <div class="sb-sub">Already equipped</div>
+      </div>
+
+      <!-- 7: Action Plan -->
+      <div class="sb-item">
+        <div class="sb-frame" role="img" aria-label="Placeholder: Personalised action plan screen" tabindex="0">
+          <span class="sb-frame-icon" aria-hidden="true">🖼️</span>
+          <span class="sb-frame-hint">Personalised<br>action plan</span>
+        </div>
+        <div class="sb-dot" aria-hidden="true"></div>
+        <div class="sb-label">Action Plan</div>
+        <div class="sb-sub">Ready to act</div>
+      </div>
+
+    </div>
+  </div>
+  <p style="font-size:0.78rem;color:#888;margin-top:1rem;font-style:italic;">Click any frame to swap in a screenshot or mockup once visuals are ready.</p>
 </section>
 
 <section class="sec sec--forest" aria-labelledby="h-adv">
